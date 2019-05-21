@@ -1,0 +1,23 @@
+@(form1: Form[models.Site])
+@main("検索") {
+	<p>検索画面</p>
+	@helper.form(action = routes.Application.send){
+		@(helper.inputText(
+			field = form1("siteName")
+		))
+
+		@(helper.inputText(
+			field = form1("address")
+		))
+
+		@(helper.inputText(
+			field = form1("tel")
+		))
+
+		@(helper.inputText(
+			field = form1("remarks")
+		))
+
+	    <div><input type="submit" value="検索"></div>
+    }
+}

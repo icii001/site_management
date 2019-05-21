@@ -1,0 +1,27 @@
+@(siteForm: Form[models.Site],site: Site)
+
+@main("編集画面") {
+	@helper.form(action = routes.Application.editConf){
+		@(helper.inputText(
+			field = siteForm("siteName"), '_label -> "現場名*", '_showConstraints -> false
+		))
+
+		@(helper.inputText(
+			field = siteForm("address"), '_label -> "住所"
+		))
+
+		@(helper.inputText(
+			field = siteForm("tel"), '_label -> "電話番号", '_showConstraints -> false
+		))
+
+		@(helper.inputText(
+			field = siteForm("remarks"), '_label -> "備考"
+		))
+
+    <form action="/editConf" method="POST">
+    	<input type="hidden" name="id" value="@site.id">
+	    <div><input type="submit" value="編集" class="button"></div>
+	</form>
+
+    }
+}

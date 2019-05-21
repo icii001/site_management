@@ -1,0 +1,36 @@
+@(site: Site)
+@main("登録確認画面") {
+    <div>下記のデータで登録を実行します。</div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="tablesorter" border="1">
+          <tr>
+            <th class="col-md-2">現場名</th>
+            <th class="col-md-3">住所</th>
+            <th class="col-md-4">連絡先</th>
+            <th class="col-md-5">備考</th>
+          </tr>
+          <tr>
+            <td class="col-md-2">@site.siteName</td>
+            <td class="col-md-3">@site.address</td>
+            <td class="col-md-4">@site.tel</td>
+            <td class="col-md-5">@site.remarks</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <form action="/request" method="POST">
+        <input type="hidden" name="siteName" value="@site.siteName">
+        <input type="hidden" name="address" value="@site.address">
+        <input type="hidden" name="tel" value="@site.tel">
+        <input type="hidden" name="remarks" value="@site.remarks">
+		<div><input type="submit" value="はい" name="submit" class="button">
+	</form>
+	<form action="/backRegister" method="POST">
+        <input type="hidden" name="siteName" value="@site.siteName">
+        <input type="hidden" name="address" value="@site.address">
+        <input type="hidden" name="tel" value="@site.tel">
+        <input type="hidden" name="remarks" value="@site.remarks">
+		<div><input type="submit" value="いいえ" name="submit" class="button">
+	</form>
+}

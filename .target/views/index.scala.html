@@ -1,0 +1,66 @@
+@(siteList: List[Site], message: String)
+
+@import play.i18n._
+
+@main("工事管理システム") {
+    <div class="message-area">@message</div>
+    <div class="search">
+    	<form action="/search" method="GET">
+       		<input type="hidden" name="id">
+      		現場名:<input type="text" name="siteName">
+      		住所:<input type="text" name="address">
+      		連絡先:<input type="text" name="tel">
+      		備考:<input type="text" name="remarks">
+      		<input type="submit" name="searchSubmit" value="検索" class="button">
+      	</form>
+    </div>
+	</script>
+    <div class="row">
+      <div class="col-md-12">
+      	<table id="sorter" class="tablesorter" border="1">
+      		<thead>
+          		<tr class="header">
+<!--             <th class="col-md-1">ID</th> -->
+            		<th class="headerCol col-md-2">現場名</th>
+            		<th class="headerCol col-md-3">住所</th>
+            		<th class="headerCol col-md-4">連絡先</th>
+            		<th class="headerCol col-md-5 headerCol">備考</th>
+            		<th class="col-md-6">編集</th>
+            		<th class="col-md-6">削除</th>
+          		</tr>
+          	</thead>
+			<tbody>
+          		@for(site <- siteList){
+          			<tr>
+<!--             <td class="col-md-1">@site.id</td> -->
+            			<td class="col-md-2">
+                		<form action="/editor" method="POST">
+                			<input type="hidden" name="id" value="@site.id"/>
+        					<input type="hidden" name="siteName" value="@site.siteName"/>
+        					<input type="hidden" name="address" value="@site.address"/>
+        					<input type="hidden" name="tel" value="@site.tel"/>
+        					<input type="hidden" name="remarks" value="@site.remarks"/>
+            				<input type="submit" value="@site.siteName" class="button2"/>
+            			</form>
+            			</td>
+            			<td class="col-md-3">@site.address</td>
+            			<td class="col-md-4">@site.tel</td>
+            			<td class="col-md-5">@site.remarks</td>
+            			<td class="col-md-6">
+                		<form action="/editor" method="POST">
+                			<input type="hidden" name="id" value="@site.id"/>
+        					<input type="hidden" name="siteName" value="@site.siteName"/>
+        					<input type="hidden" name="address" value="@site.address"/>
+        					<input type="hidden" name="tel" value="@site.tel"/>
+        					<input type="hidden" name="remarks" value="@site.remarks"/>
+            				<input type="submit" value="◎" class="button1"/>
+            			</form>
+<!--             </td> -->
+			            <td class="col-md-6"><a href="/deleteConf?id=@site.id"><button class="button1">✖</button>︎︎</a></td>
+          			</tr>
+          		}
+          	</tbody>
+        </table>
+      </div>
+    </div>
+}

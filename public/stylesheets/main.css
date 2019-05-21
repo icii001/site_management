@@ -1,0 +1,132 @@
+
+.headerCol {
+  background-position: right center;
+  background-image: url("../images/bg.gif");
+  background-repeat: no-repeat;
+}
+
+.headerSortUp {
+  background-image: url("../images/asc.gif");
+}
+.headerSortDown {
+  background-image: url("../images/desc.gif");
+}
+
+body {
+	width:1100px;
+	margin-right: auto;
+	margin-left : auto;
+	font-family:"Comic Sans MS";
+}
+
+div {
+  font-size:15px;
+}
+
+div.main_header{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size:15px;
+}
+
+table,td {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+
+table.tablesorter th {
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  font-size:15px;
+  background-color: #058204;
+  color: #ffffff;
+}
+
+table.tablesorter td {
+  padding: 10px;
+  font-size:15px;
+  vertical-align: top;
+}
+
+th.col-md-2 {
+  width: 300px;
+}
+
+th.col-md-3 {
+  width: 300px;
+}
+
+th.col-md-4 {
+  width: 300px;
+}
+
+th.col-md-5 {
+  width: 300px;
+}
+
+th,td.col-md-6 {
+  width: 50px;
+  text-align : center;
+}
+
+.footer {
+	width:800px;
+	text-align : right;
+}
+
+.search {
+	width:900px;
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+
+.message-area {
+	margin-bottom: 10px;
+	color: #FF0000;
+}
+
+p{
+	margin: 10px;
+}
+
+.attention {
+	font-size:13px;
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 5pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 5px 5px;   /* 余白       */
+  background    : #058204;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #058204;    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #058204;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.button2:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #058204;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.button1 {
+  border        : 0px;    /* 枠の指定 */
+  font-size     : 8pt;        /* 文字サイズ */
+}
+
+.button2 {
+  border        : 0px;    /* 枠の指定 */
+  font-size:15px;
+  cursor        : pointer;     /* カーソル   */
+}

@@ -1,0 +1,29 @@
+@(site: Site)
+@main("削除確認画面") {
+    <div>下記のデータを削除してよろしいでしょうか</div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="tablesorter" border="1">
+          <tr>
+<!--             <th class="col-md-1">ID</th> -->
+            <th class="col-md-2">現場名</th>
+            <th class="col-md-3">住所</th>
+            <th class="col-md-4">連絡先</th>
+            <th class="col-md-5">備考</th>
+          </tr>
+          <tr>
+<!--             <td class="col-md-1">@site.id</td> -->
+            <td class="col-md-2">@site.siteName</td>
+            <td class="col-md-3">@site.address</td>
+            <td class="col-md-4">@site.tel</td>
+            <td class="col-md-5">@site.remarks</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <form action="/delete" method="POST">
+    	<input type="hidden" name="id" value="@site.id">
+		<div><input type="submit" value="はい" name="submit" class="button">
+	</form>
+	<input type="button" onClick="location.href='/index'" value="いいえ" name="cancel" class="button"></div>
+}

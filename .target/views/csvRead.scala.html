@@ -1,0 +1,10 @@
+@(msg: String)
+@main("CSV読み込み"){
+	<div class="message-area">@msg</div>
+	@helper.form(action = routes.Application.readCsv, 'enctype -> "multipart/form-data") {
+    	<input type="file" name="csv">
+	    <p>
+        <input type="submit" value="CSV読込" name="submit" class="button">
+    	</p>
+	}
+}

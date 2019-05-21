@@ -1,0 +1,38 @@
+@(csvList:List[Site],csv:String)
+@main("CSV読込結果"){
+<script>
+history.forward();
+</script>
+
+	<p>下記 @csvList.length 件の内容を登録を実行します</p>
+<!-- 	<p class="attention">※登録は完了しておりません、CSVファイルを削除しないでください。</p> -->
+    <div class="row">
+      <div class="col-md-12">
+        <table class="tablesorter" border="1">
+          <tr>
+            <th class="col-md-2">現場名</th>
+            <th class="col-md-3">住所</th>
+            <th class="col-md-4">連絡先</th>
+            <th class="col-md-5">備考</th>
+          </tr>
+          @for(site <- csvList){
+          <tr>
+            <td class="col-md-2">@site.siteName</td>
+            <td class="col-md-3">@site.address</td>
+            <td class="col-md-4">@site.tel</td>
+            <td class="col-md-5">@site.remarks</td>
+          </tr>
+          }
+        </table>
+      </div>
+    </div>
+
+	<form action="/csvRegist" method="POST">
+		<input type="hidden" name="csv" value="@csv">
+		<input type="hidden" name="csvLen" value="@csvList.length">
+		<div><input type="submit" value="はい" name="submit" class="button">
+	</form>
+	<form action="/csvRead" method="GET">
+		<div><input type="submit" value="いいえ" name="submit" class="button">
+	</form>
+}

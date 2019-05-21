@@ -1,0 +1,2 @@
+error.required = 入力必須項目です
+error.maxLength = {0}文字以下で入力してください
